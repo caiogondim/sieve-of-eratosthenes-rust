@@ -1,7 +1,13 @@
-fn main() {
-    let end: i32 = 100_000_000;
+use std::env;
+use std::error;
+
+fn main() -> Result<(), Box<dyn error::Error>> {
+    let args: Vec<String> = env::args().collect();
+    let end: i32 = args[1].parse()?;
 
     println!("{}", run_sieve(end));
+
+    Ok(())
 }
 
 fn run_sieve(end: i32) -> i32 {
