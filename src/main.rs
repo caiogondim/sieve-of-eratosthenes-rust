@@ -19,7 +19,7 @@ fn run_sieve(end: i32) -> i32 {
     for i in begin..=ceil_loop {
         let numbers_vec_index = (i - begin) as usize;
         let val = numbers_vec[numbers_vec_index];
-        if val == false {
+        if !val {
             continue;
         }
         let mut j = i + i;
